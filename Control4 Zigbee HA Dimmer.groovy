@@ -108,7 +108,7 @@ def parse(String description) {
             } 
             if(x.contains("sa c4.dm.t0c") || x.contains("sa c4.dm.b0c")) {
             	log.debug "switch is dimming $x"
-                def l = convertHexToInt(x.tokenize(" ").last().split()) 
+                def l = convertHexToInt(x.tokenize(" ").last().trim())
                 log.debug l
             	def i = Math.round(l)
                 sendEvent( name: "level", value: i )
