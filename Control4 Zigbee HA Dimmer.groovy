@@ -2,6 +2,7 @@
  *  ps_Control4_Dimmer_ZigbeeHA
  *
  *  Copyright 2014 patrick@patrickstuart.com
+ *  All modifications Copyright 2022 iberry@raxnet.net
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -14,7 +15,7 @@
  *
  */
 metadata {
-	definition (name: "ps_Control4_Dimmer_ZigbeeHA", namespace: "ps", author: "patrick@patrickstuart.com") {
+	definition (name: "Control4 Zigbee Dimmer", namespace: "ps", author: "patrick@patrickstuart.com", importUrl: "https://raw.githubusercontent.com/iankberry/hubitat-control4-dimmer/main/Control4%20Zigbee%20HA%20Dimmer.groovy") {
 		capability "Switch Level"
 		capability "Actuator"
 		capability "Switch"
@@ -30,7 +31,7 @@ metadata {
  	preferences {
 		input("OnSpeed", "text", title:"Turn On Speed", description: "Please enter the speed at which the dimmer turns on", defaultValue:"1500", required: true, displayDuringSetup: true)
 		input("OffSpeed", "text", title:"Turn Off Speed", description: "Please enter the speed at which the dimmer turns off", defaultValue:"1500", required: true, displayDuringSetup: true)
-        input("DefaultOnValue", "text", title:"Default On Value", description: "Please enter the default value you want ST to turn on to, in case the last dimmed value is lost.", defaultValue:"75", required: true, displayDuringSetup: true)
+        input("DefaultOnValue", "text", title:"Default On Value", description: "Please enter the default value you want Hubitat to turn on to, in case the last dimmed value is lost.", defaultValue:"75", required: true, displayDuringSetup: true)
         
     }
 	simulator {
